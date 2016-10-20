@@ -29,7 +29,7 @@ import com.vamsi.xyzreader.data.ArticleLoader;
 import com.vamsi.xyzreader.data.ItemsContract;
 import com.vamsi.xyzreader.data.UpdaterService;
 
-public class Home extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class Home extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>, SwipeRefreshLayout.OnRefreshListener {
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
@@ -45,6 +45,9 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
 
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+
+        mSwipeRefreshLayout.setOnRefreshListener(this);
+
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
@@ -106,6 +109,11 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mRecyclerView.setAdapter(null);
+    }
+
+    @Override
+    public void onRefresh() {
+        startService(new Intent(this, UpdaterService.class));
     }
 
     private class Adapter extends RecyclerView.Adapter<ViewHolder> {
