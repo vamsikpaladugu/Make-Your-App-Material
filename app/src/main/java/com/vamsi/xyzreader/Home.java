@@ -208,6 +208,7 @@ public class Home extends AppCompatActivity implements LoaderManager.LoaderCallb
         display.getSize(size);
 
 
+        //calculating the image height based on aspect ratio ,screen width and padding between cards
         return (int) (((size.x - dpToPx(2 * 4 * columnCount)) / columnCount) / ratio);
 
     }

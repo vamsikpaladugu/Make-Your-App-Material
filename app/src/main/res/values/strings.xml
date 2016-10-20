@@ -98,4 +98,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_test_scrool">TestScrool</string>
     <string name="title_activity_article_detail2">" "</string>
+    <string name="share_button">Share button</string>
 </resources>

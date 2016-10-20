@@ -59,7 +59,6 @@ public class ArticleDetail extends AppCompatActivity implements LoaderManager.Lo
 
     Toolbar toolbar;
     CollapsingToolbarLayout collapsingToolbarLayout;
-    StickyScrollView stickyScrollView;
 
 
     String titleShare = "";
@@ -99,7 +98,6 @@ public class ArticleDetail extends AppCompatActivity implements LoaderManager.Lo
         });
 
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        stickyScrollView = (StickyScrollView) findViewById(R.id.sticky);
 
 
         findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
@@ -264,7 +262,7 @@ public class ArticleDetail extends AppCompatActivity implements LoaderManager.Lo
         @Override
         public Fragment getItem(int pos) {
 
-            return ArticleDetailFragment.newInstance(pages.get(pos).getImageurl(), pages.get(pos).getImageurltn(), pages.get(pos).getTitle(), pages.get(pos).getContent(), pos);
+            return ArticleDetailFragment.newInstance(pages.get(pos).getContent());
         }
 
         @Override
@@ -297,10 +295,6 @@ public class ArticleDetail extends AppCompatActivity implements LoaderManager.Lo
 
         public String getAuthor() {
             return author;
-        }
-
-        public String getImageurltn() {
-            return imageurltn;
         }
 
         public void setColor(int color) {

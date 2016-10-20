@@ -23,15 +23,11 @@ public class ArticleDetailFragment extends Fragment {
     }
 
 
-    public static ArticleDetailFragment newInstance(String img, String imgtn, String title, String body, int pos) {
+    public static ArticleDetailFragment newInstance(String body) {
 
         ArticleDetailFragment f = new ArticleDetailFragment();
         Bundle b = new Bundle();
-        b.putString("img", img);
-        b.putString("imgtn", imgtn);
-        b.putString("title", title);
         b.putString("body", body);
-        b.putInt("pos", pos);
 
         f.setArguments(b);
 
@@ -43,7 +39,7 @@ public class ArticleDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_article_detail2, container, false);
+        View view = inflater.inflate(R.layout.fragment_article_detail, container, false);
 
 
         tvBody = (TextView) view.findViewById(R.id.tvBody);

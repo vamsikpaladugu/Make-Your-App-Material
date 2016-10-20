@@ -8,4 +8,5 @@
     <dimen name="fab_pressed_elevation">12dp</dimen>
     <dimen name="fab_elevation">6dp</dimen>
     <dimen name="app_bar_elevation">4dp</dimen>
+    <dimen name="content_width">400dp</dimen>
 </resources>

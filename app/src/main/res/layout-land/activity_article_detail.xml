@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinatorLayout"
@@ -24,7 +23,6 @@
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
 
-
             <ImageView
                 android:id="@+id/ivMain"
                 android:layout_width="match_parent"
@@ -40,10 +38,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
                 app:elevation="@dimen/app_bar_elevation"
+                app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
-
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -58,44 +55,62 @@
         tools:context="com.vamsi.xyzreader.ArticleDetailFragment">
 
         <LinearLayout
-            android:id="@+id/llSticky"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/llTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:tag="sticky-hastransparency"
-                android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="@dimen/content_width"
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tvTitle"
+                <LinearLayout
+                    android:id="@+id/llSticky"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hello World!"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="#FFF" />
-
-                <TextView
-                    android:id="@+id/tvDatenAuthor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hello World!"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="#FFF" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:tag="sticky-hastransparency">
 
-            <!-- TODO: Update blank fragment layout -->
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/tvTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hello World!"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="#FFF" />
+
+                        <TextView
+                            android:id="@+id/tvDatenAuthor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hello World!"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="#FFF" />
+
+
+                    </LinearLayout>
+
+                    <!-- TODO: Update blank fragment layout -->
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
         </LinearLayout>
 
     </com.github.nitrico.stickyscrollview.StickyScrollView>
@@ -107,7 +122,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:contentDescription="@string/share_button"
         app:elevation="@dimen/fab_elevation"
         app:pressedTranslationZ="@dimen/fab_pressed_elevation"
         app:srcCompat="@drawable/ic_share_white_24dp" />
