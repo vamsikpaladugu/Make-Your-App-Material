@@ -1,0 +1,39 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        
+        <item name="android:windowContentTransitions">true</item>
+
+        <!--
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+-->
+
+
+    </style>
+
+    <style name="myimage">
+        
+        <item name="android:transitionName">image</item>
+        
+    </style>
+    
+    <style name="AppTheme.NoActionBar.Home">
+
+        <item name="android:windowExitTransition">@transition/grid_exit</item>
+        <item name="android:windowReenterTransition">@android:transition/slide_top</item>
+
+
+    </style>
+    
+</resources>
